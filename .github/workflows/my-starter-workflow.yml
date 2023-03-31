@@ -28,6 +28,7 @@ jobs:
           echo test, and deploy to your project.
           
   call-reusable-workflow:
+    needs: build
     strategy:
       matrix:
         nodeversion: [14,16,18,20]
