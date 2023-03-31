@@ -6,11 +6,14 @@ on:
       node:
         required: true
         type: string
+      environment:
+        required: true
+        type: string
         
 jobs: 
 
   build:
-  
+    environment: ${{ inputs.environment }}
     runs-on: ubuntu-latest
     
     steps:

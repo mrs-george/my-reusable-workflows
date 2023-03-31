@@ -2,6 +2,17 @@ name: My Starter Workflow
 
 on:
   workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to promote to'
+        required: true
+        default: 'development'
+        type: choice
+        options:
+        - development
+        - test
+        - production
+  push:
 
 jobs:
   build:
@@ -23,4 +34,5 @@ jobs:
     uses: ./.github/workflows/reusable-workflow.yml
     with:
       node: ${{ matrix.nodeversion }}
+      environment: development
           
