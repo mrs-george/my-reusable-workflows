@@ -23,3 +23,8 @@ jobs:
       - name: Output the input value
         run: |
          echo "The node version to use is: ${{ inputs.node }}"
+
+      - name: Output the input value
+        run: |
+          echo "Code is deployed to: ${{ inputs.environment }} ${{secrets.description}}"
+
